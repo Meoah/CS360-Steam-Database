@@ -1,0 +1,1 @@
+Have the triggers views and example queries in separate sqls
