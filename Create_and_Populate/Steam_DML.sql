@@ -1,15 +1,3 @@
---DML Triggers
---Check if the game price is negative before inserting a new game into the game table
-CREATE TRIGGER validate_gamePrice
-BEFORE INSERT ON game
-FOR EACH ROW
-BEGIN
-    IF NEW.price < 0 THEN
-        RAISE (ABORT, 'Game price cannot be negative.');
-    END IF;
-END;
---
-
 BEGIN TRANSACTION;
 
 DELETE FROM reviews;
