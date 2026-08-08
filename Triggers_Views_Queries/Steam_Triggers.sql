@@ -4,7 +4,7 @@ CREATE TABLE Game_Audit_Log (
     game_id INTEGER,
     publisher_id TEXT,
     action_type TEXT,
-    changed_at TEXT DEFAULT (DATETIME('now', 'localtime'))
+    changed_at TEXT DEFAULT (DATETIME('now', 'localtime')),
 
     --Old values
     old_title TEXT,
@@ -14,7 +14,7 @@ CREATE TABLE Game_Audit_Log (
     --New values
     new_title TEXT,
     new_price NUMERIC,
-    new_genre TEXT
+    new_genre TEXT,
     new_description TEXT
 );
 
@@ -54,25 +54,6 @@ END;
 
 -- Auditing Triggers END-----------------------------------------------------
 -- Convenience Triggers START -----------------------------------------------/
-/*Automatically inserts into transaction table when game is inserted into purchased_games table*/
-CREATE TRIGGER transaction_gamePurchased
-AFTER INSERT ON purchased_games
-BEGIN
-    INSERT INTO transactions (game_id, price)
-    VALUES (NEW.game_id, (SELECT price FROM game WHERE game_id = NEW.game_id));
-    INSERT INTO Game_Audit_Log (game_id, action_type)
-    VALUES (NEW.game_id, 'PURCHASED');
-END;
-/*Automatically inserts into transaction table when game is deleted from purchased_games table*/
-CREATE TRIGGER transaction_gameRefunded
-AFTER DELETE ON purchased_games
-BEGIN
-    INSERT INTO transactions (game_id, price)
-    VALUES (OLD.game_id, (SELECT price FROM game WHERE game_id = OLD.game_id));
-    INSERT INTO Game_Audit_Log (game_id, action_type)
-    VALUES (OLD.game_id, 'REFUNDED');
-END;
-
 
 
 -- Convenience Triggers END -------------------------------------------------

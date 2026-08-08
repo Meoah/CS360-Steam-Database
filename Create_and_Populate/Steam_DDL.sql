@@ -31,7 +31,7 @@ CREATE TABLE game (
     description TEXT,
     bytes TEXT,
     player_count INTEGER NOT NULL,
-    publisher_id TEXT NOT NULL,
+    publisher_id INTEGER NOT NULL,
     FOREIGN KEY (publisher_id) REFERENCES steam_accounts (user_id)
 );
 
