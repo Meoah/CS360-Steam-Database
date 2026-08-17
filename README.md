@@ -19,3 +19,11 @@ Project requirements, user roles, and use cases are documented in the [Team 1 St
 ## Entity-Relationship Diagram
 
 ![Steam Platform ERD](Steam_Platform_ERD.png)
+
+## Database Running/Setup Instructions with DB Browser
+[DB Browser for SQLite](https://sqlitebrowser.org/)
+
+- Download Steam_DB.db from our repository
+- Open DB Browser for SQLite.exe
+- In the "File" dropdown menu at the top left, select "Open Database"
+- Find the Steam_DB.db file and open it with DB Browser
