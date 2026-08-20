@@ -131,28 +131,28 @@ VALUES
     (10, 'Call of Duty: Modern Warfare', 59.99, 'Action', 'Experience a visceral Campaign or assemble your team in the ultimate online playground with multiple Special Ops challenges and a mix of Multiplayer maps and modes.', '175 GB', 61667, 11);
 
 -- Inserting Transactions
-INSERT INTO transactions (transaction_id, game_id)
+INSERT INTO transactions (transaction_id, game_id, price)
 VALUES
-    (1, 10),
-    (2, 9),
-    (3, 5),
-    (4, 2),
-    (5, 1),
-    (6, 4),
-    (7, 3),
-    (8, 7),
-    (9, 8),
-    (10, 6),
-    (11, 4),
-    (12, 4),
-    (13, 5),
-    (14, 3),
-    (15, 3),
-    (16, 7),
-    (17, 4),
-    (18, 6),
-    (19, 7),
-    (20, 7);
+    (1, 10, 59.99),
+    (2, 9, 39.99),
+    (3, 5, 24.99),
+    (4, 2, 59.99),
+    (5, 1, 19.99),
+    (6, 4, 69.99),
+    (7, 3, 0.00),
+    (8, 7, 39.99),
+    (9, 8, 49.99),
+    (10, 6, 0.00),
+    (11, 4, 69.99),
+    (12, 4, 69.99),
+    (13, 5, 24.99),
+    (14, 3, 0.00),
+    (15, 3, 0.00),
+    (16, 7, 39.99),
+    (17, 4, 69.99),
+    (18, 6, 0.00),
+    (19, 7, 39.99),
+    (20, 7, 39.99);
 
 -- Inserting Published Games by Publisher Accounts
 INSERT INTO published_games (user_id, game_id, publisher_username)
@@ -261,8 +261,7 @@ VALUES
 
     -- User 10 (Call of Duty: Modern Warfare) - Additional items
     (10, 46), (10, 47), (10, 48), (10, 49),
-    (10, 50), (10, 51), (10, 52), (10, 53),
-    (10, 54);
+    (10, 50);
 
 
 -- Inserting friends data

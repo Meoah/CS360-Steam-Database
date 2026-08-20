@@ -38,9 +38,8 @@ CREATE TABLE game (
 CREATE TABLE transactions (
     transaction_id INTEGER PRIMARY KEY,
     game_id INTEGER NOT NULL,
-    price INTEGER NOT NULL, -- Where is the FK coming from??
-    FOREIGN KEY (game_id) REFERENCES game (game_id),
-    FOREIGN KEY (price) REFERENCES game (price)
+    price NUMERIC NOT NULL,
+    FOREIGN KEY (game_id) REFERENCES game (game_id)
 );
 
 CREATE TABLE published_games (
